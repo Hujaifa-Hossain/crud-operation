@@ -33,7 +33,9 @@ const Home = () => {
               <Link to={'read/' + user.id}>
                 <Button className='m-1' variant="outline-success"><FaEye /></Button>
               </Link>
-              <Button className='m-1' variant="outline-primary"><FaUserEdit /></Button>
+              <Link to={'update/' + user.id}>
+                <Button className='m-1' variant="outline-primary"><FaUserEdit /></Button>
+              </Link>
               <Link to={'delete/' + user.id}>
                 <Button className='m-1' variant="outline-danger"><FaTrash /></Button>
               </Link>
