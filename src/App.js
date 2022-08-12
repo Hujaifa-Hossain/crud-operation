@@ -4,6 +4,7 @@ import {Container} from 'react-bootstrap';
 import Home from './pages/Home';
 import UserProvider from './Context/UserProvider';
 import Delete from './components/Delete';
+import Read from './components/Read';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="delete/:id" element={<Delete />} />
+        <Route path="read/:id" element={<Read />} />
       </Routes>
     </Container>
     </UserProvider>

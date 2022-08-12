@@ -6,12 +6,11 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   const [users, setUsers] = useContext(userContext);
-  console.log(users)
   return (
     <div>
       <Button variant="primary">Create User +</Button>
 
-      <Table striped bordered hover size="sm" className='my-3 text-center'>
+      <Table striped bordered hover size='sm' className='my-3 text-center'>
         <thead>
           <tr>
             <th>ID</th>
@@ -29,9 +28,11 @@ const Home = () => {
             <td>{user.position}</td>
             <td>{user.salary}</td>
             <td>
+              <Link to={'read/'+user.id}>
               <Button className='m-1' variant="outline-success"><FaEye /></Button>
+              </Link>
               <Button className='m-1' variant="outline-primary"><FaUserEdit /></Button>
-              <Link to={`delete`/+user.id}>
+              <Link to={'delete/'+user.id}>
               <Button className='m-1' variant="outline-danger"><FaTrash /></Button>
               </Link>
             </td>
