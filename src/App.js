@@ -1,10 +1,11 @@
 import './App.css';
+import UserProvider from './Context/UserProvider';
 import { Routes, Route } from "react-router-dom";
 import {Container} from 'react-bootstrap';
 import Home from './pages/Home';
-import UserProvider from './Context/UserProvider';
-import Delete from './components/Delete';
+import Create from './components/Create';
 import Read from './components/Read';
+import Delete from './components/Delete';
 
 function App() {
   return (
@@ -12,8 +13,9 @@ function App() {
       <Container className='my-4'>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="delete/:id" element={<Delete />} />
+        <Route path="create" element={<Create />} />
         <Route path="read/:id" element={<Read />} />
+        <Route path="delete/:id" element={<Delete />} />
       </Routes>
     </Container>
     </UserProvider>

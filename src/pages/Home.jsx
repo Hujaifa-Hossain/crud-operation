@@ -5,10 +5,12 @@ import { FaTrash, FaEye, FaUserEdit } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
-  const [users, setUsers] = useContext(userContext);
+  const [users] = useContext(userContext);
   return (
     <div>
-      <Button variant="primary">Create User +</Button>
+      <Link to='create'>
+        <Button variant="primary">Create User +</Button>
+      </Link>
 
       <Table striped bordered hover size='sm' className='my-3 text-center'>
         <thead>
@@ -22,18 +24,18 @@ const Home = () => {
         </thead>
         <tbody>
 
-          {users.map((user) => <tr>
+          {users.map(user => <tr key={user.id}>
             <td>{user.id}</td>
             <td>{user.name}</td>
             <td>{user.position}</td>
             <td>{user.salary}</td>
             <td>
-              <Link to={'read/'+user.id}>
-              <Button className='m-1' variant="outline-success"><FaEye /></Button>
+              <Link to={'read/' + user.id}>
+                <Button className='m-1' variant="outline-success"><FaEye /></Button>
               </Link>
               <Button className='m-1' variant="outline-primary"><FaUserEdit /></Button>
-              <Link to={'delete/'+user.id}>
-              <Button className='m-1' variant="outline-danger"><FaTrash /></Button>
+              <Link to={'delete/' + user.id}>
+                <Button className='m-1' variant="outline-danger"><FaTrash /></Button>
               </Link>
             </td>
           </tr>)}
